@@ -1,0 +1,47 @@
+<div class="profile-container">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <textarea
+      id="firstName"
+      [readonly]="isReadOnly"
+      [(ngModel)]="firstName"
+      class="profile-textarea"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <textarea
+      id="lastName"
+      [readonly]="isReadOnly"
+      [(ngModel)]="lastName"
+      class="profile-textarea"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <textarea
+      id="email"
+      [readonly]="isReadOnly"
+      [(ngModel)]="email"
+      class="profile-textarea"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="phonenumber">Phone Number</label>
+    <textarea
+      id="phonenumber"
+      [readonly]="isReadOnly"
+      [(ngModel)]="phoneNumber"
+      class="profile-textarea"
+    ></textarea>
+  </div>
+
+  <div class="button-container">
+    <button class="edit-button" (click)="toggleEditMode()">
+      {{ isReadOnly ? 'Edit' : 'Save' }}
+    </button>
+  </div>
+</div>

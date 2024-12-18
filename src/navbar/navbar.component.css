@@ -1,0 +1,54 @@
+.navbar-buttons {
+  display: flex;
+  gap: 10px; /* Increased spacing between buttons */
+}
+
+.logout-btn {
+  background-color: cornflowerblue; /* Blue button background */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 3px; /* Rounded corners */
+  padding: 6px 12px; /* Adjusted button padding for better size */
+  font-size: 12px; /* Slightly smaller font for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}

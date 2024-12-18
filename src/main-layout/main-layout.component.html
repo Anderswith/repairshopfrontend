@@ -1,0 +1,47 @@
+
+<div class="layout">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <h1>Tech Repair Shop</h1>
+    </div>
+
+  </header>
+
+  <!-- Sidebar -->
+  <aside *ngIf="isCustomer" class="sidebar">
+    <div  class="customer-data">
+        <app-customerdata></app-customerdata>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <nav class="navbar-buttons">
+      <app-navbar> </app-navbar>
+    </nav>
+    <div *ngIf="isCustomer">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div *ngIf="isTechnician">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div *ngIf="isAdmin">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Tech Repair Shop. All rights reserved.</p>
+  </footer>
+  <div *ngIf="!userSession" class="overlay">
+    <div class="overlay-content">
+      <app-login></app-login>
+    </div>
+  </div>
+</div>
+

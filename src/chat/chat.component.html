@@ -1,0 +1,36 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <div class="card">
+        <div class="card-header">Chat</div>
+        <div class="card-body height3">
+          <ul class="chat-list">
+            <li *ngFor="let chat of chats">
+              <div class="chat-body">
+                <div class="chat-message" [ngClass]="{
+              'customer-message': chat.senderId === chat.customerId,
+              'technician-message': chat.senderId === chat.technicianId
+                }">
+                <h5>{{ chat.senderUsername }}</h5>
+                  <span class="chat-date">{{ chat.chatDate | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  <p>{{ chat.chatText }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="input-container">
+    <textarea
+      [(ngModel)]="message"
+      class="textfield"
+      placeholder="Insert chat here"></textarea>
+    <button
+      (click)=addChatMessageForOrder();
+      class="send-btn">Send
+    </button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngFor="let order of Orders" class="order-box">
+    <div class="order-details">
+      <img [src]="order.image" id="order-image" alt="order-image">
+      <div class="order-info">
+        <p><strong>Order Number:</strong> {{order.orderNumber}}</p>
+        <p><strong>Item Name:</strong> {{order.itemName}}</p>
+        <p><strong>Issue:</strong> {{order.defect}}</p>
+        <p><strong>Representative:</strong> {{order.technicianName}}</p>
+        <p><strong>Expected Completion Date:</strong> {{order.expectedCompleteDate}}</p>
+      </div>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-bar-fill" [style.width]="getProgressBarWidth(order.orderStatus)">
+        </div>
+      </div>
+      <p class="status-text"> Status: {{order.statusLabel}}</p>
+    </div>
+    <div>
+      <button class="order-button" (click)="openChatClicked(order)" [disabled]="order.orderStatus < 2">Open Chat</button>
+    </div>
+    <div >
+      <app-chat *ngIf="openChat"
+                [orderId]="activeOrderId"
+                [customerId]="activeCustomerId"
+                [technicianId]="activeTechnicianId">
+      </app-chat>
+    </div>
+  </div>
+</div>
+

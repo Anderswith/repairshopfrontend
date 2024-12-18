@@ -1,0 +1,224 @@
+body{
+  background:#eee;
+}
+.chat-list {
+  padding: 0;
+  font-size: .8rem;
+}
+
+.chat-list li {
+  margin-bottom: 10px;
+  overflow: auto;
+  color: #ffffff;
+}
+
+
+.chat-list .chat-message {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background: #5a99ee;
+  display: block;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.chat-list .chat-message:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 0;
+  height: 0;
+}
+
+.chat-list .chat-message h5 {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: .9rem;
+}
+
+.chat-list .chat-message p {
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-list .chat-body {
+  margin-left: 20px;
+  float: left;
+  width: 70%;
+}
+
+.chat-list .in .chat-message:before {
+  left: -12px;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #5a99ee;
+}
+
+.chat-list .out .chat-img {
+  float: right;
+}
+
+.chat-list .out .chat-body {
+  float: right;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.chat-list .out .chat-message {
+  background: #fc6d4c;
+}
+
+.chat-list .out .chat-message:before {
+  right: -12px;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #fc6d4c;
+}
+
+.card .card-header:first-child {
+  -webkit-border-radius: 0.3rem 0.3rem 0 0;
+  -moz-border-radius: 0.3rem 0.3rem 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.card .card-header {
+  background: dimgray;
+  border: 0;
+  font-size: 1rem;
+  padding: .65rem 1rem;
+  position: relative;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.content{
+  margin-top:40px;
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+}
+
+/* Textarea styling */
+.textfield {
+  width: 80%; /* Make textarea take up 80% of the width */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  max-height: 20px;
+  margin-top: 40px;
+}
+.chat-list .chat-body {
+  display: flex;
+  justify-content: flex-end; /* Ensures the technician message aligns to the right */
+  width: 95%; /* Makes the chat body span the full width of the container */
+}
+
+
+
+.send-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #45a049;
+}
+
+.send-btn:focus {
+  outline: none;
+}
+
+
+
+.textfield {
+  width: 100%; /* On mobile devices, make the textarea take up full width */
+}
+
+.send-btn {
+  min-height: 42px;
+  height: 125%;
+  width: 20%; /* Make the button take up the full width on small screens */
+  margin-top: 41px;
+  padding-left: 5px;
+}
+.chat-list .chat-message {
+  font-size: 1rem;
+  background: #5a99ee;
+  display: block;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%; /* Make chat messages wider */
+  max-width: 75%
+}
+
+/* Customer's message alignment */
+.chat-list .customer-message {
+  background: #5a99ee;
+  float: left;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.chat-list .customer-message:before {
+  left: -12px;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #5a99ee;
+}
+
+/* Technician's message alignment */
+.chat-list .technician-message {
+  font-size: 1rem;
+  background: #fc6d4c;
+  float: right;
+  text-align: right;
+  margin-right: 10px;
+  padding: 12px 20px;
+
+}
+
+.chat-list .technician-message:before {
+  right: -12px;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #fc6d4c;
+}
+
+/* Style adjustments */
+.chat-list .chat-message h5 {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: .9rem;
+}
+
+.chat-list .chat-message p {
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-list .customer-message {
+  background: #5a99ee;
+}
+
+.chat-list .technician-message {
+  background: #fc6d4c;
+}
+
+

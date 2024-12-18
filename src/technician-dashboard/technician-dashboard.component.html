@@ -1,0 +1,47 @@
+
+<div class="order-list">
+  <!-- List of order numbers -->
+  <ul class="list-group">
+    <li *ngFor="let order of myOrders" class="list-group-item">
+      <div class="order-item" (click)="toggleOrderDetails(order)">
+        <span class="order-number">{{ order.orderNumber }}</span>
+        <button class="btn btn-info btn-sm float-right">Details</button>
+      </div>
+
+      <!-- Dropdown with order details -->
+      <div *ngIf="order.showDetails" class="order-details">
+        <div class="order-image">
+          <img [src]="order.image" alt="Order Image" class="img-fluid" />
+        </div>
+        <div class="order-info">
+          <p><strong>Item:</strong> {{ order.itemName }}</p>
+          <p><strong>Defect:</strong> {{ order.defect }}</p>
+          <p><strong>Expected Completion Date:</strong> {{ order.expectedCompleteDate }}
+            <input type="date" [(ngModel)]="order.expectedCompleteDate" class="form-control">
+          </p>
+          <p><strong>Status:</strong> {{ order.statusLabel }}
+            <select [(ngModel)]="order.statusLabel">
+              <option value="Technician assigned">Technician Assigned</option>
+              <option value="Awaiting spare parts">Awaiting Spare Parts</option>
+              <option value="In progress">In Progress</option>
+              <option value="Complete">Complete</option>
+            </select>
+          </p>
+          <p><strong>Comment:</strong> </p>
+          <textarea [(ngModel)]="order.comment" placeholder="Insert comment...">{{order.comment}}</textarea>
+          <button (click)="SubmitChanges(order)" id="submitBtn" class="btn btn-primary mt-3">Submit</button>
+          <div>
+            <button class="chat-button" (click)="openChatClicked(order)" [disabled]="order.orderStatus < 2">Chat</button>
+          </div>
+          <div >
+            <app-chat *ngIf="openChat"
+                      [orderId]="activeOrderId"
+                      [customerId]="activeCustomerId"
+                      [technicianId]="activeTechnicianId">
+            </app-chat>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

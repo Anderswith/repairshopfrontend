@@ -1,0 +1,17 @@
+
+<nav class="navbar">
+  <div *ngIf="isCustomer" class="navbar-buttons">
+    <button  (click)=LogOut(); class="logout-btn">Logout</button>
+  </div>
+  <div *ngIf="isTechnician" class="navbar-buttons">
+    <button [routerLink]="'/main-layout/technician/' + username + '/technician-dashboard'" class="logout-btn">My Orders</button>
+    <button [routerLink]="'/main-layout/technician/' + username + '/available-orders'" class="logout-btn">Available Orders</button>
+    <button [routerLink]="'/main-layout/technician/' + username + '/register-customer'" class="logout-btn">Register Customer</button>
+    <button [routerLink]="'/main-layout/technician/' + username + '/create-order'" class="logout-btn">Create Order</button>
+    <button (click)=LogOut(); class="logout-btn">Logout</button>
+  </div>
+  <div *ngIf="isAdmin" class="navbar-buttons">
+    <button (click)=LogOut(); class="logout-btn">Logout</button>
+  </div>
+
+</nav>

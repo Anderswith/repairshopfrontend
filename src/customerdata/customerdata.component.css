@@ -1,0 +1,98 @@
+/* Container for the profile form */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margins */
+  background-color: #f0f0f0; /* Optional: background for better visual effect */
+}
+.profile-container {
+  max-width: 400px;  /* Reduced max-width to make the form more compact */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #ddd;
+  outline: 3px solid rgba(0, 0, 0, 0.05);
+  height: 90%;
+}
+.profile-container {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Label for each field */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Textarea styles */
+.profile-textarea {
+  width: 90%;
+  height: 20x; /* Reduced height of the text area */
+  padding: 8px; /* Reduced padding for smaller text areas */
+  margin-bottom: 15px; /* Reduced margin-bottom */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  font-size: 12px; /* Smaller font size */
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+/* Textarea in readonly mode (grayed out) */
+.profile-textarea[readonly] {
+  background-color: #f5f5f5;
+  color: #888;
+  border-color: #e0e0e0;
+}
+
+/* Focus state for textarea */
+.profile-textarea:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+/* Button container */
+.button-container {
+  text-align: center;
+}
+
+/* Button style */
+.edit-button {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Adjusted padding for smaller button */
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.edit-button:hover {
+  background-color: #005bb5;
+}
+
+/* Button for save action */
+.edit-button:active {
+  background-color: #004080;
+}
+
+/* When the button is clicked, change its state */
+.edit-button:focus {
+  outline: none;
+}
