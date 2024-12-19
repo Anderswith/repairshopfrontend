@@ -111,4 +111,40 @@ export class OrderService {
     });
   }
 
+  GetAllOrdersNotInProgress(): Observable<any> {
+    const userSession = this.userSessionService.getUserSession();
+    if (!userSession) {
+      throw new Error('No user logged in');
+    }
+    const token = userSession.token;
+
+    return this.http.get(`${this.baseUrl}/Order/GetAllOrdersNotInProgress`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    });
+  }
+
+  CreateOrder(customerName: string, itemName: string, defect: string, image: string): Observable<any> {
+    const userSession = this.userSessionService.getUserSession();
+    if (!userSession) {
+      throw new Error('No user logged in');
+    }
+
+    const token = userSession.token;
+
+    const params = new HttpParams()
+      .set('customerName', customerName)
+      .set('itemName', itemName)
+      .set('defect', defect)
+      .set('image', image);
+
+    return this.http.post(`${this.baseUrl}/Order/AddOrder`, null ,{
+      params: params,
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    });
+  }
+
 }

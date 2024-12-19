@@ -40,8 +40,12 @@ export class NavbarComponent {
 
   LogOut(){
     this.userSessionService.removeUserSession();
-    this.router.navigate(['/main-layout']);
-    window.location.reload();
+    this.router.navigate(['main-layout']);
+    this.UpdateUserSession();
+  }
+
+  UpdateUserSession() {
+    this.userSession = null;
   }
 
 }

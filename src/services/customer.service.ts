@@ -8,7 +8,7 @@ import {UsersessionService} from './usersession.service';
 })
 export class CustomerService {
 
-  private baseUrl = 'http://localhost:5044/api'; // Replace with your API URL
+  private baseUrl = 'http://localhost:5044/api';
 
   constructor(private http: HttpClient, private userSessionService: UsersessionService) { }
 
@@ -55,5 +55,23 @@ export class CustomerService {
         'Authorization': `Bearer ${token}`
       })
     });
+  }
+
+  GetCustomerByUsername(username: string): Observable<any> {
+    const userSession = this.userSessionService.getUserSession();
+    if(!userSession){
+      throw new Error('No user logged in');
+    }
+    const token = userSession.token;
+    const params = new HttpParams()
+      .set('username', username)
+
+    return this.http.get(`${this.baseUrl}/User/GetUserByUsername`, {
+      params,
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    })
+
   }
 }

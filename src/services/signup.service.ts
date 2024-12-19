@@ -25,7 +25,8 @@ export class SignupService {
       .set('phoneNumber', phoneNumber)
       .set('firstName', firstName)
       .set('lastName', lastName)
-    return this.http.post(`${this.baseUrl}/User/CreateCustomer/`, null, {params,
+    return this.http.post(`${this.baseUrl}/User/CreateCustomer/`, null, {
+      params,
       headers: new HttpHeaders({
         'Authorization': `Bearer ${token}`
       })});

@@ -1,0 +1,48 @@
+.order-list {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.list-group {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-group-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-number {
+  font-weight: bold;
+}
+
+.order-details {
+  padding: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.order-image img {
+  max-width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.order-info {
+  margin-top: 10px;
+}
+
+.begin-work {
+  display: block;
+  margin-top: 10px;
+}

@@ -125,7 +125,7 @@ export class TechnicianDashboardComponent implements OnInit {
   }
 
   toggleOrderDetails(order: any): void {
-    order.showDetails = !order.showDetails; // Toggle visibility of order details
+    order.showDetails = !order.showDetails;
   }
   openChatClicked(order: Order): void {
     console.log('Selected Order:', order);

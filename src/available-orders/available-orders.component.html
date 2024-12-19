@@ -1,1 +1,22 @@
-<p>available-orders works!</p>
+<div class="order-list">
+  <ul class="list-group">
+    <li *ngFor="let order of availableOrders" class="list-group-item" (click)="toggleOrderDetails(order)">
+      <div class="order-item">
+        <span class="order-number">{{ order.orderNumber }}</span>
+        <button class="btn btn-info btn-sm float-right">Details</button>
+      </div>
+
+      <div *ngIf="order.showDetails" class="order-details">
+        <div class="order-image">
+          <img [src]="order.image" alt="Order Image" class="img-fluid" />
+        </div>
+        <div class="order-info">
+          <p><strong>Item:</strong> {{ order.itemName }}</p>
+          <p><strong>Defect:</strong> {{ order.defect }}</p>
+          <button class="btn btn-primary mt-3 begin-work" (click)="beginWork(order)">Begin Work</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+

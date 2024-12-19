@@ -7,7 +7,7 @@ import {NavbarComponent} from '../navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {CustomerdataComponent} from '../customerdata/customerdata.component';
-;
+
 
 
 
@@ -33,7 +33,7 @@ export class MainLayoutComponent implements OnInit {
     this.isCustomer = userRole === 'Customer';
     this.isTechnician = userRole === 'Technician';
     this.isAdmin = userRole === 'Admin';
-    
+
   }
 
 }
